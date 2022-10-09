@@ -7,7 +7,6 @@ int main(int argc, char* argv[])
 
 	std::cin >> n >> k;
 
-
 	std::cout << ((n / k * n) + (k / n * k)) / ((n / k + k / n)) << std::endl;
 
 	return EXIT_SUCCESS;
