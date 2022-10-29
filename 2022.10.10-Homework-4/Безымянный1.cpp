@@ -15,7 +15,6 @@ int main(int argc, char* argv[])
 		}
 	}
 	std::cout << a;
-	system("pause");
 	
 	return EXIT_SUCCESS;
 }
