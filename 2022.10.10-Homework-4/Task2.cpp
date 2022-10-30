@@ -3,18 +3,20 @@
 int main(int argc, char* argv[])
 {
 	int x = 0;
-	int a = 0;
+	int i = 1;
+	int k = 0;
 
 	std::cin >> x;
 
-	for (int i = 1; i <= x; ++i)
+	for (; x != 0;)
 	{
-		if (x % i == 0)
-		{
-			 ++a;
-		}
+		
+		k += x % 10 * i;
+		x /= 10;
+		i *= 2;
 	}
-	std::cout << a;
-	
+    std::cout << k; 
+
 	return EXIT_SUCCESS;
 }
+
