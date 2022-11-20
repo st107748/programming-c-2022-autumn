@@ -15,23 +15,27 @@ int main(int argc, char* argv[])
 		std::cin >> a[i];
 	}
 
-
 	for (int i = 0; i < n; ++i)
 	{
 		if (a[i] < min)
 		{
 			min = a[i];
 			k = i;
-
 		}
 	}
 	
-	for (int i = k; i < n; ++i)
+	for (int i = 0; i < k; ++i)
 	{
-		std::cout << a[i] << " ";
+		int j = a[0];
+		for (int i = 0; i < n; ++i)
+		{
+			a[i] = a[i + 1];
+		}
+		
+		a[n - 1] = j;
 	}
 
-	for (int i = 0; i < k; ++i)
+	for (int i = 0; i < n; ++i)
 	{
 		std::cout << a[i] << " ";
 	}

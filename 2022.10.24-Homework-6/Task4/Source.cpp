@@ -20,22 +20,23 @@ int main(int argc, char* argv[])
 		a[i] = i + 1;
 	}
 
-	for (int i = aa - 1, k = 0; i < bb; ++i, ++k)
+	for (int i = aa - 1, k = 0; i < (aa - 1) + (bb - aa + 1) / 2; ++i, ++k)
 	{
-		a[i] = bb - k;
+		int c = a[i];
+		a[i] = a[bb - k - 1];
+		a[bb - k - 1] = c;
+	}
+
+	for (int i = cc - 1, k = 0; i < (cc - 1) + (dd - cc + 1) / 2; ++i, ++k)
+	{
+		int c = a[i];
+		a[i] = a[dd - k - 1];
+		a[dd - k - 1] = c;
 	}
 
 	for (int i = 0; i < n; ++i)
 	{
-		if (cc - 1 <= i && i <= dd - 1)
-		{
-			std::cout << a[dd - k] << " ";
-			++k;
-		}
-		else
-		{
-			std::cout << a[i] << " ";
-		}
+		std::cout << a[i] << " ";
 	}
 
 	return EXIT_SUCCESS;

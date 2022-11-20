@@ -13,7 +13,14 @@ int main(int argc, char* argv[])
 		std::cin >> a[i];
 	}
 
-	for (int i = n - 1; i >= 0; i -= 1)
+	for (int i = 0; i < n / 2; ++i)
+	{
+		int c = a[i];
+		a[i] = a[n - i - 1];
+		a[n - i - 1] = c;
+	}
+
+	for (int i = 0; i < n; ++i)
 	{
 		std::cout << a[i] << " ";
 	}

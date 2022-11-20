@@ -16,32 +16,38 @@ int main(int argc, char* argv[])
 	
 	std::cin >> k;
 
-	if (k > 0)
+	if (k < 0)
 	{
-		for (int i = n - k; i < n; ++i)
+		for (int i = 0; i < -k; ++i)
 		{
-			std::cout << a[i] << " ";
-		}
-		for (int i = 0; i < k - 1; ++i)
-		{
-			std::cout << a[i] << " ";
+			int j = a[0];
+			for (int i = 0; i < n; ++i)
+			{
+				a[i] = a[i + 1];
+			}
+
+			a[n - 1] = j;
 		}
 	}
 
-	if (k < 0)
+	if (k > 0)
 	{
-		for (int i = -k; i < n; ++i)
+		for (int i = 0; i < k; ++i)
 		{
-			std::cout << a[i] << " ";
-		}
-		for (int i = 0; i < - k; ++i)
-		{
-			std::cout << a[i] << " ";
+			int l = a[n - 1];
+			for (int i = n - 1; i > 0; --i)
+			{
+				a[i] = a[i - 1];
+			}
+
+			a[0] = l;
 		}
 	}
 	
-
-
+	for (int i = 0; i < n; ++i)
+	{
+		std::cout << a[i] << " ";
+	}
 
 	return EXIT_SUCCESS;
 }
