@@ -11,15 +11,6 @@ void function()
 	std::string s;
 	std::ifstream f("ff.txt");
 	std::ofstream g("gg.txt");
-	/* while (getline(f, h) >> x)
-	{
-		sum = sum + x;
-		
-		g << sum << std::endl;
-
-		sum = 0;
-	}
-	*/
 
 	while (getline(f, h))
 	{
